@@ -3,18 +3,17 @@ import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
 import { Fade, Grid, Paper, Typography, TextField } from '@material-ui/core';
 import { useStyles } from './Styles';
-type Props = {
-    open1: boolean,
-    setOpen1: (open: boolean) => void
-}
+import { Props } from './Footer';
 
 const ExpenseTtack: React.FC<Props> = ({ open1, setOpen1 }) => {
-    const classes = useStyles();
 
+    const classes = useStyles();
 
     const handleClose2 = () => {
         setOpen1(false);
     };
+
+
 
 
     return (
@@ -32,7 +31,7 @@ const ExpenseTtack: React.FC<Props> = ({ open1, setOpen1 }) => {
                 }}
             >
                 <Fade in={open1}>
-                    <div className={classes.paper}>
+                    <form className={classes.paper}>
                         <TextField
                             id=""
                             label="Enter an Amount"
@@ -72,7 +71,7 @@ const ExpenseTtack: React.FC<Props> = ({ open1, setOpen1 }) => {
                                 </Paper>
                             </Grid>
                         </Grid>.
-                    </div >
+                    </form >
                 </Fade >
             </Modal >
 

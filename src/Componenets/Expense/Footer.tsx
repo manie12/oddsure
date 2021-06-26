@@ -5,6 +5,16 @@ import { useStyles } from './Styles';
 import Income from './Income';
 import ExpenseTtack from './ExpenseTtack';
 
+export type Props = {
+    open1: boolean,
+    setOpen1: (open1: boolean) => void
+}
+export type Prop = {
+    open: boolean,
+    setOpen: (open: boolean) => void
+}
+
+
 const Footer = () => {
     const classes = useStyles();
     const [open, setOpen] = useState(false);

@@ -4,12 +4,9 @@ import Backdrop from '@material-ui/core/Backdrop';
 import Fade from '@material-ui/core/Fade';
 import { useStyles } from './Styles';
 import { Paper, Grid, Typography, TextField } from '@material-ui/core';
-type Props = {
-    open: boolean,
-    setOpen: (open: boolean) => void
-}
+import { Prop } from './Footer';
 
-const Income: React.FC<Props> = ({ open, setOpen }) => {
+const Income: React.FC<Prop> = ({ open, setOpen }) => {
     const classes = useStyles();
 
 
@@ -32,12 +29,13 @@ const Income: React.FC<Props> = ({ open, setOpen }) => {
                 }}
             >
                 <Fade in={open}>
-                    <div className={classes.paper}>
+                    <form className={classes.paper}>
                         <TextField
                             id=""
                             label="Enter an Amount"
                             fullWidth
                             type="number"
+
                             className={classes.textField}
                         />
                         <Grid container spacing={1}>
@@ -78,7 +76,7 @@ const Income: React.FC<Props> = ({ open, setOpen }) => {
                             </Grid>
                         </Grid>
 
-                    </div>
+                    </form>
                 </Fade>
             </Modal>
 
