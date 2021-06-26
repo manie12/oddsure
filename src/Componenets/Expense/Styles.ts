@@ -20,7 +20,7 @@ export const useStyles = makeStyles(theme => ({
         fontWeight: 600
     },
     paper: {
-        padding: '1em 0em'
+        padding: '1em 1.3em'
     },
     root: {
         width: "100%",
@@ -38,5 +38,25 @@ export const useStyles = makeStyles(theme => ({
     bottomNav: {
         margin: 'auto',
 
+    },
+    modal: {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+
+    },
+    paperModal: {
+        backgroundColor: theme.palette.background.paper,
+        border: '2px solid #000',
+        boxShadow: theme.shadows[5],
+        padding: theme.spacing(2, 4, 3),
+    },
+    handleModal: {
+        padding: '1.5em .5em'
+    },
+    textField: {
+        marginTop: "-7em",
+        backgroundColor: '#fcfcfc'
     }
+
 }))
