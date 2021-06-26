@@ -21,5 +21,22 @@ export const useStyles = makeStyles(theme => ({
     },
     paper: {
         padding: '1em 0em'
+    },
+    root: {
+        width: "100%",
+        padding: '1.5em 0em',
+
+    },
+    appBar: {
+        top: 'auto',
+        bottom: 0,
+    },
+    BottomNavigation: {
+        fontSize: '4em',
+
+    },
+    bottomNav: {
+        margin: 'auto',
+
     }
 }))
