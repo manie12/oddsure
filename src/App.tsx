@@ -1,19 +1,24 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import './App.css';
-import Sign from './Componenets/SignUp/Sign';
-import Expense from './Componenets/Expense/Expense';
+import Admin from './Componenets/Admin/Admin';
+import Header from './Componenets/Header/Header';
+import Previous from './Componenets/PreviousPrediction/PreviousSelection';
 
 function App() {
   return (
     <div className="App">
       <Switch>
-        <Route path="/sign">
-          <Sign />
+        <Route exact path="/">
+          <Header />
 
         </Route>
-        <Route path="/">
-          <Expense />
+        <Route exact path="/previous">
+          <Previous />
+
+        </Route>
+        <Route exact path="/admin">
+          <Admin />
 
         </Route>
 
@@ -23,3 +28,4 @@ function App() {
 }
 
 export default App;
+
