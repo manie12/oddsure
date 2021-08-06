@@ -33,7 +33,7 @@ export const useStyles = makeStyles((theme) => ({
         letterSpacing: "0.05em"
     },
     tips__grid: {
-        margin: ".1em",
+        margin: "0em",
         backgroundColor: "#03386F"
     },
     typo__vip: {

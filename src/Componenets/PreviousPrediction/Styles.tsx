@@ -93,7 +93,7 @@ export const useStyles = makeStyles((theme) => ({
     accordion__container: {
         backgroundColor: "#03386F",
         color: "#fcfcfc",
-        margin: ".6em 0em 0em 0em"
+        margin: "0em 0em 0em 0em"
     },
     expand__icon: {
         color: "#fcfcfc"
