@@ -6,7 +6,7 @@ import { ApolloClient, InMemoryCache, createHttpLink, ApolloProvider } from '@ap
 
 
 const httpLink = createHttpLink({
-    uri: "http://localhost:5000"
+    uri: "https://oddsure.herokuapp.com/"
 });
 
 const client = new ApolloClient({
