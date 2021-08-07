@@ -76,6 +76,14 @@ export const useStyles = makeStyles((theme) => ({
         borderRadius: "2em",
         padding: "1em 0em 0em 6.5em"
     },
+    grid__mpesa1: {
+        height: "24em",
+        width: '20em',
+        backgroundColor: "#03386F",
+        margin: "3em 0em 0em 2.7em",
+        borderRadius: "2em",
+        padding: "1em 0em 0em 6.5em"
+    },
     lipa__mpesa: {
         color: "#00B13C",
         fontWeight: 800,

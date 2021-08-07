@@ -1,4 +1,6 @@
 import React from 'react';
+import { useQuery } from '@apollo/client';
+import moment from 'moment';
 import { useHistory } from 'react-router-dom';
 import { Grid, Typography } from '@material-ui/core';
 import { useStyles } from './Styles';
@@ -7,11 +9,12 @@ import Accordion from '@material-ui/core/Accordion';
 import AccordionSummary from '@material-ui/core/AccordionSummary';
 import AccordionDetails from '@material-ui/core/AccordionDetails';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-
-
+import { FETCH_PREVIOUS } from '../../GraphQl/FetchPrevious';
+import { PreviousData } from '../../GraphQl/Types';
 const Previouis = () => {
     const classes = useStyles();
-    const history = useHistory()
+    const history = useHistory();
+    const { loading, data } = useQuery<PreviousData>(FETCH_PREVIOUS);
     return (
         <div>
             <Grid container >
@@ -38,70 +41,52 @@ const Previouis = () => {
                         Previous Prediction
                     </Typography>
                 </Grid>
-                <Grid item xs={12}>
-                    <Accordion className={classes.accordion__container} >
-                        <AccordionSummary
-                            expandIcon={<ExpandMoreIcon className={classes.expand__icon}
-                            />}
-                            aria-controls="panel1a-content"
-                            id="panel1a-header"
-                        >
-                            <Typography className={classes.heading}> Match History on Thursdat 04 August 2021</Typography>
-                        </AccordionSummary>
-                        <AccordionDetails className={classes.opened__accordion}>
-                            <Grid container item xs={12}>
-                                <Grid item xs={6}>
-                                    <Typography className={classes.status__bar}>Match</Typography>
-                                </Grid>
-                                <Grid item container justify="center" xs={3}>
-                                    <Typography className={classes.status__bar}>Tip</Typography>
-                                </Grid>
-                                <Grid item container justify="flex-end" xs={3}>
-                                    <Typography className={classes.status__bar}>Status</Typography>
-                                </Grid>
+                {
+                    data?.getPreviouis && data?.getPreviouis?.map(p => (
 
-                                <Grid item xs={6}>
-                                    <Typography>Melbourne vs Sydney</Typography>
-                                </Grid>
-                                <Grid item container justify="flex-end" xs={3}>
-                                    <Typography>HT/FT 2/2</Typography>
-                                </Grid>
-                                <Grid item container justify="flex-end" xs={3}>
-                                    <Typography>Won</Typography>
-                                </Grid>
-                                <Grid item xs={6}>
-                                    <Typography>Melbourne vs Sydney</Typography>
-                                </Grid>
-                                <Grid item container justify="flex-end" xs={3}>
-                                    <Typography>HT/FT 2/2</Typography>
-                                </Grid>
-                                <Grid item container justify="flex-end" xs={3}>
-                                    <Typography>Won</Typography>
-                                </Grid>
-                                <Grid item xs={6}>
-                                    <Typography>Melbourne vs Sydney</Typography>
-                                </Grid>
-                                <Grid item container justify="flex-end" xs={3}>
-                                    <Typography>HT/FT 2/2</Typography>
-                                </Grid>
-                                <Grid item container justify="flex-end" xs={3}>
-                                    <Typography>Won</Typography>
-                                </Grid>
-                                <Grid item xs={6}>
-                                    <Typography>Melbourne vs Sydney</Typography>
-                                </Grid>
-                                <Grid item container justify="flex-end" xs={3}>
-                                    <Typography>HT/FT 2/2</Typography>
-                                </Grid>
-                                <Grid item container justify="flex-end" xs={3}>
-                                    <Typography>Won</Typography>
-                                </Grid>
-                            </Grid>
+                        <Grid item xs={12}>
+                            <Accordion className={classes.accordion__container} >
+                                <AccordionSummary
+                                    expandIcon={<ExpandMoreIcon className={classes.expand__icon}
+                                    />}
+                                    aria-controls="panel1a-content"
+                                    id="panel1a-header"
+                                >
+                                    <Typography className={classes.heading}> Match History on {moment(p?.date).format("MM/DD/YYYY")}</Typography>
+                                </AccordionSummary>
+                                <AccordionDetails className={classes.opened__accordion}>
+                                    <Grid container item xs={12}>
+                                        <Grid item xs={6}>
+                                            <Typography className={classes.status__bar}>Match</Typography>
+                                        </Grid>
+                                        <Grid item container justify="center" xs={3}>
+                                            <Typography className={classes.status__bar}>Tip</Typography>
+                                        </Grid>
+                                        <Grid item container justify="flex-end" xs={3}>
+                                            <Typography className={classes.status__bar}>Status</Typography>
+                                        </Grid>
 
-                        </AccordionDetails>
-                    </Accordion>
+                                        <Grid item xs={6}>
+                                            <Typography>{p?.home} vs {p?.away}</Typography>
+                                        </Grid>
+                                        <Grid item container justify="flex-end" xs={3}>
+                                            <Typography>{p?.gameType}</Typography>
+                                        </Grid>
+                                        <Grid item container justify="flex-end" xs={3}>
+                                            <Typography>Won</Typography>
+                                        </Grid>
 
-                </Grid>
+                                    </Grid>
+
+                                </AccordionDetails>
+                            </Accordion>
+
+
+
+                        </Grid>
+                    ))
+                }
+
             </Grid>
         </div >
     )

@@ -1,19 +1,44 @@
 export interface BasicVars {
-    id: number;
+
     totalOdds: string;
     home: string;
     away: string;
     oddsToday: string;
 }
-export interface FreeVars {
+export interface BasicVarsId {
     id: number;
+    totalOdds: string;
+    home: string;
+    away: string;
+    oddsToday: string;
+    createdAt: string;
+
+}
+export interface FreeVarsId {
+    id: number;
+    home: string;
+    away: string;
+    pick: string;
+    createdAt: string;
+
+}
+export interface FreeVars {
+
     home: string;
     away: string;
     pick: string;
 
 }
-export interface PreviousVars {
+export interface PreviousVarsId {
     id: number;
+    date: string;
+    home: string;
+    away: string;
+    gameType: string;
+
+}
+export interface PreviousVars {
+
     date: string;
     home: string;
     away: string;
@@ -22,21 +47,21 @@ export interface PreviousVars {
 }
 
 export interface BasicData {
-    getBasicTip: BasicVars[];
+    getBasicTip: BasicVarsId[];
 }
 
 export interface GoldenData {
-    getGoldenTip: BasicVars[];
+    getGoldenTip: BasicVarsId[];
 }
 
 export interface VipData {
-    getVipTip: BasicVars[];
+    getVipTip: BasicVarsId[];
 }
 
 export interface FreeData {
-    getFreeTip: FreeVars[];
+    getFreeTip: FreeVarsId[];
 }
 export interface PreviousData {
-    getPreviouis: PreviousVars[];
+    getPreviouis: PreviousVarsId[];
 }
 

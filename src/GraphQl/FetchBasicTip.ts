@@ -9,6 +9,7 @@ export const FETCH_BASIC = gql`
     home
     away
     oddsToday
+    createdAt
     }
 }
 

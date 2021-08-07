@@ -9,6 +9,7 @@ export const FETCH_VIP = gql`
     home
     away
     oddsToday
+    createdAt
     }
 }
 
