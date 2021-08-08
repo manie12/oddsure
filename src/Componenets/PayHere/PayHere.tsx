@@ -56,6 +56,6 @@ export default function TransitionsModal() {
                     </div>
                 </Fade>
             </Modal>
-        </div>
+        </dic>
     );
 }
