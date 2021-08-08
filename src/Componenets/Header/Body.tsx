@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useQuery } from '@apollo/client';
-import { Grid, Typography } from '@material-ui/core';
+import { Grid, Typography, CircularProgress } from '@material-ui/core';
 import { useStyles } from './Styles';
 import { FETCH_FREETIP } from '../../GraphQl/FetchFreeTips';
 import { FreeData, FreeVarsId } from '../../GraphQl/Types';
@@ -31,8 +31,14 @@ const Body = () => {
 
 
     if (loading) {
-        return <p>loading</p>
+        return <Grid container>
+            <Grid justify="center" alignItems="center" container item xs={12}>
+                <CircularProgress />
+            </Grid>
+        </Grid>
+
     }
+
     if (!data) {
         return <p>No Games Now</p>
     }

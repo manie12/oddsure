@@ -20,12 +20,12 @@ const Header = () => {
             <Grid container >
                 <Grid item container xs={12} justify="center" className={classes.grid__oddsure}>
                     <Typography className={classes.oddsure}>
-                        ODDSURE
+                        SPORTPESASURETIPS
                     </Typography>
                 </Grid>
                 <Grid xs={12} justify="center" className={classes.grid__sure_tips}>
                     <Typography>
-                        SURE TIPS
+
                     </Typography>
                 </Grid>
                 <Grid container justify="center" item xs={6} style={{ backgroundColor: "#03386F" }}>

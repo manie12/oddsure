@@ -4,6 +4,7 @@ export interface BasicVars {
     home: string;
     away: string;
     oddsToday: string;
+
 }
 export interface BasicVarsId {
     id: number;

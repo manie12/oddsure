@@ -12,13 +12,14 @@ export const useStyles = makeStyles((theme) => ({
         backgroundColor: "#0E2A47"
     },
     grid__sure_tips: {
-        height: "3.125em",
+        height: "4em",
         backgroundImage: `url(${banner})`,
         objectFit: "contain",
         backgroundSize: "cover",
         width: "100%",
         padding: "1em 0em 0em 1em",
         margin: "1em 0em 0em 0em",
+        boxShadow: "inset 3px 4px 5px #000000"
 
     },
     image__ball: {
@@ -34,7 +35,8 @@ export const useStyles = makeStyles((theme) => ({
     },
     tips__grid: {
         margin: "0em",
-        backgroundColor: "#03386F"
+        backgroundColor: "#03386F",
+        padding: '0.6em 0em 0em 0em'
     },
     typo__vip: {
         color: "#fcfcfc",
@@ -110,5 +112,16 @@ export const useStyles = makeStyles((theme) => ({
         margin: "0.4em 0em 0em 0em",
         height: '2em'
 
-    }
+    },
+    modal: {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    paper: {
+        backgroundColor: theme.palette.background.paper,
+        border: '2px solid #000',
+        boxShadow: theme.shadows[5],
+        padding: theme.spacing(2, 4, 3),
+    },
 }))
